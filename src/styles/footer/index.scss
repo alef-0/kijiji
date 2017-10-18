@@ -1,0 +1,196 @@
+footer {
+  display: block;
+  background-color: #474950;
+  font-family: Larsseit, Arial, sans-serif;
+}
+
+.linkContainer {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 40px;
+  padding-left: 20px;
+}
+
+.footer-column {
+  margin-top: 56px;
+  padding-bottom: 60px;
+  min-width: 50%;
+  flex-basis: 50%;
+}
+
+.columnTitle {
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #afb7ba;
+  letter-spacing: 2px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.columnList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.columnItem {
+  margin-top: 25px;
+
+  .columnLink {
+    text-decoration: none;
+    transition: color 200ms linear;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 20px;
+  }
+
+  .langOptions {
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 20px;
+    border: 1px solid #d5dbdd;
+    background-color: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: Larsseit, Arial, sans-serif;
+    padding: 12px 56px 12px 15px;
+
+    option {
+      color: #404648;
+    }
+  }
+}
+
+.badgeContainer {
+  margin: 0;
+}
+
+.storeIcons {
+  justify-content: center;
+  display: flex;
+  margin: 0 25px;
+}
+
+.socialMediaIcons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px auto 0 auto;
+  width: auto;
+
+  .socialMediaIconsContainer {
+    border-radius: 25px;
+    align-items: center;
+    background-color: #595d64;
+    display: inline-block;
+    height: 50px;
+    justify-content: center;
+    margin-left: 15px;
+    position: relative;
+    width: 50px;
+  }
+
+  .facebook {
+    background-color: url('../images/facebook.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.container {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+
+  .appStore {
+    height: 40px;
+    width: 135px;
+    background-image: url('../images/app-store.svg');
+    background-position: center;
+  }
+
+  .googlePlay {
+    height: 40px;
+    width: 135px;
+    margin-left: 40px;
+    background-image: url('../images/get_it_on_Google_play.svg');
+    background-position: center;
+    backgroun-repeat: none;
+  }
+
+  .icon {
+    display: inline-block;
+    overflow: hidden;
+    pointer-events: none;
+    vertical-align: middle;
+  }
+}
+
+.copyright {
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 22px;
+  color: #afb7ba;
+  margin: 60px 40px 0 40px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+
+
+@media all and (min-width: 760px) {
+  .linkContainer {
+    padding-top: 60px;
+    padding-left: 40px;
+    width: 64%
+  }
+
+  .footer-column {
+    flex-basis: auto;
+  }
+
+  .badgeContainer {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .storeIcons {
+    margin-left: 20px;
+    margin-right: 0;
+  }
+
+  .socialMediaIcons {
+    margin: 0 0 0 50px;
+  }
+
+  .copyright {
+    margin: 60px 0 0 0;
+
+    .copyrightText {
+      margin: 0;
+    }
+  }
+
+  .container .googlePlay {
+    margin-left: 35px;
+  }
+}
+
+@media all and (min-width: 980px) {
+  .linkContainer {
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 88px 0 0;
+    width: 980px;
+  }
+
+  .footer-column {
+    margin: 0 auto;
+    min-width: 0;
+  }
+}

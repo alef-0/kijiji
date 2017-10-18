@@ -1,0 +1,215 @@
+@import 'signIn';
+@import 'signUp';
+
+
+.layout {
+  max-width: 1020px;
+  margin: 30px auto;
+  padding: 0 20px;
+
+  h1 {
+    color: #f46e40;
+    font-family: Larsseit,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 15px 10px 15px 0;
+
+    .no-indent {
+      padding-left: 0!important;
+      margin-left: 0;
+      clear: none;
+      float: none;
+    }
+  }
+
+  form section {
+    margin: 0 26px 25px 0;
+
+    label {
+      color: #404648;
+      font-family: Larsseit,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+
+    input[type=text], input[type=password] {
+      appearance: none;
+      border-radius: 2px;
+      border: 1px solid #d5dbdd;
+      color: #404648;
+      font-family: Larsseit,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-size: 14px;
+      line-height: 1.6em;
+      margin-top: 8px;
+      padding: 6px 12px;
+      width: 100%;
+    }
+  }
+}
+
+.columnLeft {
+  padding: 0 40px 2px 0;
+  flex: 1;
+  display: block;
+
+  .container-admin {
+    border: none;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1)!important;
+    padding: 0;
+  }
+
+  .container-info {
+    background-color: #fff;
+    border: 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1)!important;
+    color: #404648;
+    font: 13px/18px Larsseit,"Helvetica Neue",Helvetica, sans-serif;
+  }
+}
+
+.columnRight {
+  width: 300px;
+}
+
+.bottom-space {
+  margin-bottom: 20px;
+}
+
+.container-info  {
+  font: 13px/16px Larsseit,"Helvetica Neue",Helvetica, sans-serif;
+  background: #fff;
+  border: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 20px 30px;
+  color: #404648;
+
+  h2 {
+    border-bottom: 0;
+    color: #404648;
+    font-family: Larsseit,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.6em;
+    text-align: center;
+  }
+
+  .button-open {
+    border-radius: 4px;
+    font-family: Larsseit,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.6em;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  .background-blue {
+    background-color: #5a8fef;
+    width: 100%;
+  }
+}
+
+.button-open {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border: none;
+  background: #f39d00;
+  color: #fff;
+  text-shadow: none;
+}
+
+.safety-message-redesign {
+  color: #404648;
+  font-family: Larsseit,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  padding: 0 10px 0 10px;
+  text-align: center;
+
+  .strong-message {
+    font-size: 13px;
+    padding-bottom: 5px;
+  }
+}
+
+.circles {
+  float: none;
+  padding: 0 0 25px 50px;
+  width: 100%;
+
+  .no-background {
+    background: 0 0;
+  }
+}
+
+
+.container-admin {
+  background: #f2f2f2;
+  border: solid 1px #e4e4e4;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 0 20px 20px;
+}
+
+.input-offset label {
+  display: block;
+  font-weight: 400;
+  padding: 2px 0;
+  text-indent: -15px;
+}
+
+.input-offset input[type=checkbox] {
+  margin: 0 15px 0;
+}
+
+.button-task {
+  border-radius: 4px;
+  font-family: Larsseit,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.6em;
+  padding: 10px 20px;
+  border: none;
+  color: #fff;
+}
+
+.background-green {
+  background-color: #99c663;
+  min-width: 100px;
+
+}
+
+@media all and (max-width: 760px) {
+  .columnLeft {
+    padding-right: 260px;
+  }
+}
+
+@media all and (max-width: 680px) {
+  .columnLeft {
+    padding-right: 0;
+  }
+}
+
+@media all and (max-width: 1000px) {
+  .circles {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 0 20px 0;
+    width: 100%;
+  }
+}
+

@@ -1,0 +1,252 @@
+.container-forms {
+  background: #f2f2f2;
+  border: solid 1px #e4e4e4;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 0 20px 20px;
+
+  .add-asterisk:before {
+    color: #d82c05;
+    content: "* ";
+  }
+
+  section {
+    margin: 0 0 10px;
+
+    &.has-tooltip input {
+      float: left;
+      clear: left;
+    }
+  }
+
+  .description {
+    display: block;
+    margin: 20px 0;
+  }
+
+  input[type=text], input[type=password], textarea {
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    background: #fff;
+    border: inset 1px #ccc;
+  }
+
+  .container-info {
+    margin-top: 20px;
+  }
+
+  label {
+    font: 13px/16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #000;
+    font-weight: 700;
+    padding-top: 2px;
+
+    .input-description {
+      font-weight: 400;
+    }
+  }
+
+  section input[type=text], input[type=password] {
+    font: 13px/16px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+    margin-top: 4px;
+    width: 265px;
+  }
+
+  .tooltip-trigger.icon {
+    background: transparent url(../images/sprite.png) no-repeat -326px -89px;
+    display: inline-block;
+    font-family: 'Times New Roman',serif;
+    font-style: italic;
+    font-weight: 700;
+    height: 21px;
+    line-height: 21px;
+    margin: 4px 0 0 10px;
+    text-align: center;
+    width: 21px;
+  }
+
+  .icon {
+    float: left;
+  }
+
+  .clear-left {
+    clear: left;
+  }
+
+  h2 {
+    font: 14px/17px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    border-bottom: dotted 1px #e4e4e4;
+    font-weight: 700;
+    margin: 0 0 10px;
+    padding-bottom: 5px;
+    text-align: left;
+  }
+
+  .accountDetailsHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row;
+  }
+
+  .input-offset label {
+    display: block;
+    font-weight: 400;
+    padding: 2px 0 2px 25px;
+    text-indent: -27px;
+  }
+
+  #ConfirmPasswordSection {
+    margin: 20px 0 0;
+  }
+
+  .actions {
+    margin-top: 10px;
+  }
+
+  .button-task {
+    border-radius: 3px;
+    background-clip: padding-box;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background: #83b54f;
+    border: none;
+    color: #fff;
+    text-shadow: none;
+    padding: 2px 10px;
+    font: 13px/16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+
+  .button-divider {
+    padding: 0 5px;
+  }
+
+  .cancel-button {
+    font: 13px/16px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+
+}
+
+.container-summary {
+  margin-bottom: 20px;
+  border: solid 1px #ccc;
+
+  h2 {
+    text-align: left;
+    border-bottom: dotted 1px #e4e4e4;
+    font-weight: 700;
+    margin: 0 0 10px;
+    padding-bottom: 5px;
+  }
+
+  dl {
+    font: 13px/16px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+
+    dt:first-child {
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    dt {
+      font-weight: 700;
+      border-top: dotted 1px #e4e4e4;
+      margin-top: 10px;
+      padding-top: 10px;
+    }
+
+    dd {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+.vme-account-details__right {
+  display: inline-block;
+  vertical-align: top;
+  width: 48%;
+  margin-left: 1%;
+  position: relative;
+
+  .vme-account-details__logo {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -5px;
+  }
+}
+
+.vme-account-details-left {
+  display: inline-block;
+  vertical-align: top;
+  width: 48%;
+  margin-right: 1%;
+}
+
+.vme-account-details__complete {
+  margin: 60px auto 10px;
+  text-align: center;
+  border: 2px solid #656565;
+  border-radius: 16px;
+  padding: 10px 0;
+  max-width: 350px;
+  box-sizing: border-box;
+
+  .vme-account-details__complete__text {
+    margin-bottom: 10px;
+  }
+
+  img {
+    max-width: 56%;
+    border: 0;
+    vertical-align: middle;
+  }
+
+  &:after {
+    content: "\2714";
+    font-size: 27px;
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #99c663;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    padding: 11px 0 0 2px;
+    color: #fff;
+    box-sizing: border-box;
+  }
+}
+
+
+
+@media all and (max-width: 680px) {
+  .container-summary {
+    border: none;
+  }
+}
+
+@media only screen and (max-width: 1049px) {
+  .vme-account-details {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .vme-account-details-left, .vme-account-details__right {
+    flex: 1;
+    width: 100%;
+
+  }
+}

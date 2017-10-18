@@ -3,6 +3,8 @@ import rootReducer from '../reducers';
 import createLogger from 'redux-logger';
 import thunk from 'redux-thunk';
 import DevTools from '../containers/DevTools';
+import {hashHistory} from 'react-router';
+import { routerMiddleware, push } from 'react-router-redux';
 
 /**
  * Entirely optional, this tiny library adds some functionality to
@@ -12,22 +14,31 @@ import DevTools from '../containers/DevTools';
  */
 const logger = createLogger();
 
-const finalCreateStore = compose(
-  // Middleware you want to use in development:
-  applyMiddleware(logger, thunk),
-  // Required! Enable Redux DevTools with the monitors you chose
-  DevTools.instrument()
-)(createStore);
+const actionCreators = {
+    push
+};
 
-module.exports = function configureStore(initialState) {
-  const store = finalCreateStore(rootReducer, initialState);
+const router = routerMiddleware(hashHistory);
 
-  // Hot reload reducers (requires Webpack or Browserify HMR to be enabled)
-  if (module.hot) {
-    module.hot.accept('../reducers', () =>
-      store.replaceReducer(require('../reducers'))
-    );
-  }
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+        // Options: http://zalmoxisus.github.io/redux-devtools-extension/API/Arguments.html
+        actionCreators,
+    }) :
+    compose;
+
+const enhancer = composeEnhancers(
+    applyMiddleware(thunk, logger, router)
+);
+
+export default function configureStore(initialState) {
+    const store = createStore(rootReducer, initialState, enhancer);
+
+    if (module.hot) {
+        module.hot.accept('../reducers', () =>
+            store.replaceReducer(require('../reducers'))
+        );
+    }
 
   return store;
 };

@@ -1,0 +1,384 @@
+header {
+  padding: 0;
+  box-sizing: border-box;
+  color: #000066;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: relative;
+  width: 100%;
+  z-index: 1021;
+}
+
+.logoBarWrapper {
+  background-color: #41407A;
+}
+
+.logoBar {
+  color: #FFFFFF;
+  font-size: 14px;
+  line-height: 1;
+  padding: 20px 20px 27px;
+}
+
+.logoBar::after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+.logo {
+  margin: 27px 20px 0 0;
+  display: inline-block;
+  vertical-align: bottom;
+
+  .logoLink {
+    display: block;
+    overflow: hidden;
+    text-decoration: none;
+
+    .logoLinkIcon {
+      width: 90px;
+      height: 45px;
+      background-image: url('../images/kijiji.svg');
+      background-position: left;
+      background-repeat: no-repeat;
+      display: block;
+    }
+
+    .icon {
+      overflow: hidden;
+      pointer-events: none;
+      vertical-align: middle;
+    }
+  }
+}
+
+.headerTools {
+  float: right;
+
+  .headerLinks {
+    margin-bottom: 20px;
+    text-align: right;
+    font-family: Larsseit, "Helvetica Neue", Helvetica,Arial, sans-serif;
+    line-height: 1;
+
+    .headerLink {
+      color: inherit;
+      display: inline-block;
+      margin-left: 20px;
+      text-decoration: none;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+    .headerLinkLanguage {
+      color: inherit;
+      display: inline-block;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+
+  .headerButtons {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    line-height: 45px;
+    text-align: right;
+    font-family: Larsseit,"Helvetica Neue",Helvetica,Arial, sans-serif;
+
+    .headerButtonAnonymous {
+      display: inline-block;
+      position: relative;
+      vertical-align: top;
+      box-sizing: border-box;
+      color: #6C6DCA;
+      padding: 0 20px 0 0;
+      line-height: 45px;
+
+      .headerButtonAnonymousLink {
+        color: #FFFFFF;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      .headerButtonAnonymousOr {
+        line-height: 45px;
+        display: inline;
+        padding: 0 4px 0;
+      }
+    }
+
+    .headerButtonPostAd {
+      background-color: #99c663;
+      display: inline-block;
+      position: relative;
+      vertical-align: top;
+      border-radius: 4px;
+      box-sizing: border-box;
+      color: #FFFFFF;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 0.2s linear;
+      padding: 0 20px;
+    }
+  }
+}
+
+
+//searchBar
+
+.searchBarWrapper {
+  border-bottom: 1px solid rgb(213, 219, 221);
+  background-color: rgb(241, 242, 242);
+}
+
+.searchBar {
+  background-color: rgb(241, 242, 242);
+  box-sizing: border-box;
+  position: relative;
+  margin: 0px;
+  padding: 20px;
+}
+
+.searchLabel {
+    clip: rect(0px 0px 0px 0px);
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    margin: -1px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.formFieldKeyword {
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  padding-right: 68px;
+  margin: 0px;
+
+  input {
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    color: rgb(102, 102, 102);
+    display: block;
+    font-family: inherit;
+    font-size: 15px;
+    height: 45px;
+    line-height: 45px;
+    width: 100%;
+    -webkit-appearance: none;
+    outline: none;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(189, 189, 189);
+    border-image: initial;
+    border-radius: 4px 0px 0px 4px;
+    margin: 0px;
+    padding: 0px 20px;
+  }
+}
+
+.formFieldCategory {
+  box-sizing: border-box;
+  display: none;
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  margin: 10px 0px 0px;
+
+  .selectCategory {
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    color: rgb(102, 102, 102);
+    font-family: inherit;
+    font-size: 15px;
+    height: 45px;
+    line-height: 45px;
+    width: 100%;
+    -webkit-appearance: none;
+    outline: none;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(189, 189, 189);
+    border-image: initial;
+    border-radius: 4px;
+    margin: 0px;
+    padding: 0px 20px;
+  }
+}
+
+.formFieldLocationPicker {
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  margin: 10px 0px 0px;
+
+  .inputLocationPicker {
+    outline-width: 0;
+    outline: none;
+    background-color: #FFFFFF;
+    border: 1px #BDBDBD solid;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #666666;
+    display: block;
+    font-family: inherit;
+    font-size: 15px;
+    height: 45px;
+    line-height: 45px;
+    margin: 0;
+    padding: 0 20px;
+    width: 100%;
+    cursor: pointer;
+    padding-right: 50px !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+}
+
+.searchSubmit {
+  background-color: #99c663;
+  border: 0;
+  border-radius: 0 4px 4px 0;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: block;
+  font-size: 15px;
+  height: 45px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  transition: background-color 0.2s linear;
+  right: 20px;
+  top: 20px;
+  width: 68px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.headerButtonFavourites {
+  position: relative;
+  vertical-align: top;
+}
+
+.headerButton {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+}
+
+.headerButtonMyKijiji {
+  outline-width: 0;
+  outline: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: block;
+  font-weight: bold;
+  line-height: 45px;
+  text-decoration: none;
+  padding: 0 10px;
+  position: relative;
+}
+
+
+@media all and (min-width: 550px) {
+  .headerButtonFavourites {
+    display: inline-block;
+  }
+
+  .headerButtonMyKijiji {
+    padding: 0 20px;
+  }
+}
+
+@media all and (min-width: 640px) {
+  .searchBar {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .formFieldKeyword {
+    padding-right: 0;
+
+    input {
+      border-radius: 4px;
+    }
+  }
+
+  .formFieldCategory {
+    display: block;
+    flex: 1 1 1px;
+  }
+
+  .formFieldLocationPicker {
+    flex: 1 1 1px;
+  }
+
+  .searchSubmit {
+    border-radius: 0 4px 4px 0;
+    flex: 0 1 auto;
+    margin: 10px auto 0 auto;
+    position: static;
+    width: 68px;
+  }
+}
+
+@media all and (min-width: 760px) {
+  header {
+    margin-bottom: 0;
+  }
+  .logoBar {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media all and (min-width: 830px) {
+  .formFieldKeyword {
+    margin-top: 0px;
+    padding-right: 0px;
+    flex: 1 1 1px;
+
+    input {
+      padding-right: 20px;
+      border-radius: 4px 0px 0px 4px;
+    }
+  }
+
+  .formFieldCategory {
+    margin-top: 0px;
+  }
+}
+
+@media all and (min-width: 980px) {
+  .headerButtonPostAd {
+    width: 150px;
+  }
+
+  .formFieldLocationPicker {
+    margin-top: 0;
+  }
+
+  .searchSubmit {
+    margin: 0;
+  }
+}

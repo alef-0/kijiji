@@ -1,15 +1,11 @@
-/**
- * Based on the current environment variable, we need to make sure
- * to exclude any DevTools-related code from the production builds.
- * The code is envify'd - using 'DefinePlugin' in Webpack.
- */
+import devStore from './configureStore.dev';
 
 let loadedStore = null;
 
 if (process.env.NODE_ENV === 'production') {
   loadedStore = require('./configureStore.prod');
 } else {
-  loadedStore = require('./configureStore.dev');
+  loadedStore = devStore;
 }
 
-export const configureStore = loadedStore;
+export const store = loadedStore();
