@@ -11,6 +11,9 @@
     "start": "node devServer.js",
     "lint": "eslint src"
   },
+  "engines": {
+    "node": "6.11.3"
+  },
   "repository": {
     "type": "git",
     "url": ""
