@@ -9,7 +9,8 @@ header {
 }
 
 .logoBarWrapper {
-  background-color: #41407A;
+  background-color: #403e7c;
+  height: 119px;
 }
 
 .logoBar {
@@ -69,6 +70,10 @@ header {
       margin-left: 20px;
       text-decoration: none;
 
+      &:hover {
+        text-decoration: underline;
+      }
+
       &:first-child {
         margin-left: 0;
       }
@@ -80,6 +85,10 @@ header {
       text-decoration: none;
       font-weight: bold;
       text-transform: uppercase;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
@@ -91,6 +100,39 @@ header {
     line-height: 45px;
     text-align: right;
     font-family: Larsseit,"Helvetica Neue",Helvetica,Arial, sans-serif;
+
+    .headerItems {
+      display: flex;
+      align-items: center;
+    }
+
+    .headerButtonIconLink {
+      color: inherit;
+      display: flex;
+      align-items:center;
+      justify-content: center;
+      margin-left: 20px;
+      text-decoration: none;
+      fill: none;
+      height: 30px;
+      line-height: 20px;
+      padding: 4px 2px;
+      position: relative;
+      transition: transform 150ms ease-in-out;
+      width: 30px;
+
+      &:hover {
+        padding-bottom: 7px;
+        transform: translateY(-3px);
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+    }
+
+
 
     .headerButtonAnonymous {
       display: inline-block;
@@ -105,6 +147,10 @@ header {
         color: #FFFFFF;
         font-weight: bold;
         text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
 
       .headerButtonAnonymousOr {
@@ -127,6 +173,10 @@ header {
       text-decoration: none;
       transition: background-color 0.2s linear;
       padding: 0 20px;
+
+      &:hover {
+        background-color: #8dbf51;
+      }
     }
   }
 }
@@ -148,17 +198,17 @@ header {
 }
 
 .searchLabel {
-    clip: rect(0px 0px 0px 0px);
-    height: 1px;
-    width: 1px;
-    position: absolute;
-    border-width: 0px;
-    border-style: initial;
-    border-color: initial;
-    border-image: initial;
-    margin: -1px;
-    padding: 0px;
-    overflow: hidden;
+  clip: rect(0px 0px 0px 0px);
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  border-image: initial;
+  margin: -1px;
+  padding: 0px;
+  overflow: hidden;
 }
 
 .formFieldKeyword {
@@ -192,9 +242,13 @@ header {
   }
 }
 
+.formFieldKeyword__on {
+  padding-right: 0;
+}
+
 .formFieldCategory {
   box-sizing: border-box;
-  display: none;
+  display: block;
   position: relative;
   vertical-align: top;
   width: 100%;
@@ -218,6 +272,16 @@ header {
     border-radius: 4px;
     margin: 0px;
     padding: 0px 20px;
+  }
+
+  .selectCategoryIcon {
+    color: #d5dbdd;
+    height: 5px;
+    margin-top: -2px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    width: 10px;
   }
 }
 
@@ -251,10 +315,20 @@ header {
     -moz-appearance: none;
     appearance: none;
   }
+
+  .inputLocationPickerIcon {
+    color: #d5dbdd;
+    height: 5px;
+    margin-top: -2px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    width: 10px;
+  }
 }
 
 .searchSubmit {
-  background-color: #99c663;
+  background-color: #83B54F;
   border: 0;
   border-radius: 0 4px 4px 0;
   color: #FFFFFF;
@@ -272,9 +346,23 @@ header {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+
+  .searchSubmitIcon {
+    color: #FFFFFF;
+    height: 22px;
+    width: 22px;
+  }
+}
+
+.searchSubmit__on {
+  border-radius: 4px;
+  margin: 10px auto 0 auto;
+  position: static;
+  width: 100%;
 }
 
 .headerButtonFavourites {
+  display: none;
   position: relative;
   vertical-align: top;
 }
@@ -296,6 +384,24 @@ header {
   text-decoration: none;
   padding: 0 10px;
   position: relative;
+
+  .headerButtonMyKijijiIcon {
+    color: #99c663;
+    height: 5px;
+    margin-left: 10px;
+    width: 10px;
+  }
+
+  .icon {
+    display: inline-block;
+    overflow: hidden;
+    pointer-events: none;
+    vertical-align: middle;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 
@@ -342,11 +448,43 @@ header {
   }
 }
 
+@media (min-width: 550px) {
+  .headerButtons .headerButtonIconLink {
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: 650px) {
+  .formFieldLocationPicker {
+    flex: 1 1 1px;
+
+    .inputLocationPicker {
+      border-left-width: 0;
+      border-radius: 0;
+    }
+  }
+
+  .searchSubmit {
+    border-radius: 0 4px 4px 0;
+    flex: 0 1 auto;
+    margin: 10px auto 0 auto;
+    position: static;
+    width: 68px;
+  }
+
+  .formFieldCategory {
+    .selectCategory {
+      border-radius: 4px 0 0 4px;
+    }
+  }
+
+}
+
 @media all and (min-width: 760px) {
   header {
     margin-bottom: 0;
   }
-  .logoBar {
+  .searchBar {
     padding-left: 40px;
     padding-right: 40px;
   }
@@ -356,7 +494,6 @@ header {
   .formFieldKeyword {
     margin-top: 0px;
     padding-right: 0px;
-    flex: 1 1 1px;
 
     input {
       padding-right: 20px;
@@ -365,7 +502,8 @@ header {
   }
 
   .formFieldCategory {
-    margin-top: 0px;
+    display: block;
+    flex: 1 1 1px;
   }
 }
 
@@ -374,11 +512,26 @@ header {
     width: 150px;
   }
 
+  .formFieldKeyword {
+    flex: 1 1 1px;
+    margin-top: 0;
+    padding-right: 0;
+  }
+
+  .searchSubmit {
+    margin-top: 0;
+  }
+
   .formFieldLocationPicker {
     margin-top: 0;
   }
 
-  .searchSubmit {
-    margin: 0;
+  .formFieldCategory {
+    margin-top: 0;
+
+    .selectCategory {
+      border-left-width: 0;
+      border-radius: 0;
+    }
   }
 }

@@ -7,7 +7,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                <Header/>
+                <Header location={this.props.location.pathname}/>
                 {this.props.children}
                 <Footer />
             </div>

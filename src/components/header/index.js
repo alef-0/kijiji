@@ -7,7 +7,7 @@ export default class Header extends Component {
         return (
             <header>
                 <LogoBar authorized={this.props.authorized}/>
-                {this.props.authorized ? null : <SearchBar/>}
+                {this.props.location && !this.props.location.startsWith('/profile') ? <SearchBar/> : null}
             </header>
         );
     }

@@ -189,18 +189,23 @@
 .background-green {
   background-color: #99c663;
   min-width: 100px;
-
-}
-
-@media all and (max-width: 760px) {
-  .columnLeft {
-    padding-right: 260px;
-  }
 }
 
 @media all and (max-width: 680px) {
   .columnLeft {
     padding-right: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .columnLeft {
+    padding: 0;
+  }
+
+  .columnRight {
+    flex: 1;
+    width: 100%;
+    margin-top: 20px;
   }
 }
 

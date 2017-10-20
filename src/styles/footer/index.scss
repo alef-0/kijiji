@@ -44,6 +44,20 @@ footer {
     font-size: 15px;
     font-weight: bold;
     line-height: 20px;
+
+    &:hover, &:focus {
+      outline-width: 0;
+      outline: none;
+      color: #31589d;
+    }
+  }
+
+  .langOptionsIcon {
+    color: #ffffff;
+    height: 4px;
+    position: relative;
+    right: 23px;
+    width: 7px;
   }
 
   .langOptions {
@@ -57,6 +71,9 @@ footer {
     cursor: pointer;
     font-family: Larsseit, Arial, sans-serif;
     padding: 12px 56px 12px 15px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 
     option {
       color: #404648;
@@ -65,7 +82,7 @@ footer {
 }
 
 .badgeContainer {
-  margin: 0;
+  margin-top: 60px;
 }
 
 .storeIcons {
@@ -79,9 +96,9 @@ footer {
   flex-wrap: wrap;
   justify-content: center;
   margin: 30px auto 0 auto;
-  width: auto;
+  width: 180px;
 
-  .socialMediaIconsContainer {
+  .socialMediaIconContainer {
     border-radius: 25px;
     align-items: center;
     background-color: #595d64;
@@ -91,16 +108,78 @@ footer {
     margin-left: 15px;
     position: relative;
     width: 50px;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
   }
 
-  .facebook {
-    background-color: url('../images/facebook.svg');
-    background-position: center;
-    background-repeat: no-repeat;
+  .facebookIcon {
+    color: #ffffff;
+    height: 20px;
+    width: 10px;
+    margin-left: -5px;
+    margin-top: -10px;
+  }
+
+  .instagramIcon {
+    color: #ffffff;
+    height: 22px;
+    width: 22px;
+    margin-left: -11px;
+    margin-top: -11px;
+  }
+
+  .twitterIcon {
+    color: #ffffff;
+    height: 20px;
+    width: 20px;
+    margin-left: -10px;
+    margin-top: -10px;
+  }
+
+  .youtubeIcon {
+    color: #ffffff;
+    height: 18px;
+    width: 25px;
+    margin-left: -12.5px;
+    margin-top: -9px;
+    fill:none
+  }
+
+  .kijijiCentralIcon {
+    color: #ffffff;
+    height: 25px;
+    width: 25px;
+    margin-left: -12.5px;
+    margin-top: -12.5px;
+  }
+
+  .facebook:hover {
+    background-color: #3c5b9a;
+  }
+
+  .instagram:hover {
+    background: url(../images/Instagram_Hover.png);
+    background-size: contain;
+  }
+
+  .twitter:hover {
+    background-color: #28a9df
+  }
+
+  .youtube:hover {
+    background-color: #e91c00;
+  }
+
+  .kijijiCentral:hover {
+    background-color: #99c663;
   }
 }
 
-.container {
+.containerIcons {
   display: inline-block;
   height: 100%;
   width: 100%;
@@ -140,6 +219,11 @@ footer {
 }
 
 
+@media all and (min-width: 414px) {
+  .socialMediaIcons {
+    width: auto;
+  }
+}
 
 @media all and (min-width: 760px) {
   .linkContainer {

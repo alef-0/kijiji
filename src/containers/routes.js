@@ -8,7 +8,7 @@ import SignIn from '../containers/auth/signIn';
 import SignUp from '../containers/auth/signUp';
 import Profile from '../containers/profile';
 import AccountDetails from '../containers/profile/accountDetails';
-import Orders from './profile/orders';
+import Orders from '../containers/orders';
 
 export default (
     <Route path="/" component={App}>
@@ -19,7 +19,7 @@ export default (
         </Route>
         <Route path='profile' component={Profile}>
             <Route path="account" component={AccountDetails}/>
-            <Route path="orders" component={Orders}/>
         </Route>
+        <Route path="postings" component={Orders}/>
     </Route>
 );

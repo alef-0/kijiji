@@ -19,3 +19,9 @@
     margin-top: 5px;
   }
 }
+
+@media (max-width: 760px) {
+  .container {
+    flex-flow: column;
+  }
+}

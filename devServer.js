@@ -1,6 +1,5 @@
 const path = require('path');
 const express = require('express');
-const webpack = require('webpack');
 const config = require('./webpack.config.dev');
 const verifiedData = {
     name: "Joe Blogs",
@@ -9,20 +8,13 @@ const verifiedData = {
 }
 
 const app = express();
-const compiler = webpack(config);
 
-const host = 'http://localhost';
-const port = process.env.npm_config_port ? process.env.npm_config_port : 3000;
+const port = process.env.PORT || 3000;
 
-app.use(require('webpack-dev-middleware')(compiler, {
-    noInfo: true,
-    publicPath: config.output.publicPath
-}));
+app.use(express.static(__dirname + '/dist'));
 
-app.use(require('webpack-hot-middleware')(compiler));
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 app.use('/verify', function(req, res, next) {
@@ -30,10 +22,7 @@ app.use('/verify', function(req, res, next) {
     next();
 });
 
-app.listen(port, 'localhost', (err) => {
-    if (err) {
-        console.log(err);
-        return;
-    }
-    console.info('==> Listening on port %s. Open up %s:%s/ in your browser.', port, host, port);
+app.listen(port, function() {
+    console.log('Our app is running on http://localhost:' + port);
 });
+

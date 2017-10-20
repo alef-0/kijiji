@@ -1,11 +1,11 @@
-import devStore from './configureStore.dev';
+'use strict';
 
 let loadedStore = null;
 
 if (process.env.NODE_ENV === 'production') {
   loadedStore = require('./configureStore.prod');
 } else {
-  loadedStore = devStore;
+  loadedStore = require('./configureStore.dev');
 }
 
 export const store = loadedStore();

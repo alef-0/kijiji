@@ -64,47 +64,50 @@ class SignUp extends Component {
                         <div className='container-info'>
                             <form id='RegistrationForm' className='special track-form-flow' method='post'>
                                 <div className='signUpPanel'>
-                                    <div className='signUpPanel__top'>
-                                        <div className='vme-verify'>
-                                            <img className='vme-verify__logo'
-                                                 src={require('../../images/logo-verifiedme--small.png')} width='135'
-                                                 height='26'/>
-                                            <div className='vme-verify__qrCode'>
-                                                <h2>Scan QR Code</h2>
-                                                <div className='vme-verify__inner'>
-                                                    <div className='vme-verify__inner__top'>
-                                                        <p>Open Verified.Me on your smartphone, and snap a picture of
-                                                            this Code to continue.</p>
-                                                    </div>
-                                                    <div className='vme-verify__inner__bottom'>
-                                                        <img
-                                                            className='vme-verify__animation'
-                                                             src={require('../../images/qr-animation.gif')}
-                                                            width='120'
-                                                            height='112'
-                                                        />
-                                                    </div>
-                                                </div>
-                                                <img
-                                                    className='vme-verify__code'
-                                                    src={verifyCode}
-                                                    width='182'
-                                                    height='182'
-                                                    onClick={() => this.verifyIdentity()}/>
-                                            </div>
-                                            <div className='vme-verify__mobile'>
-                                                <h2>Enter mobile number</h2>
-                                                <p>Press Send and you will receive a text message on your smartphone to
-                                                    continue.</p>
-                                                <input
-                                                    className='vme-verify__phone-number'
-                                                    type='tel'
-                                                    name='vme-verify-sms'
-                                                    id='vme-verify-sms'/>
-                                                <button className='vme-verify__button'>Send</button>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {/*{!this.props.verified*/}
+                                        {/*? <div className='signUpPanel__top'>*/}
+                                            {/*<div className='vme-verify'>*/}
+                                                {/*<img className='vme-verify__logo'*/}
+                                                     {/*src={require('../../images/logo-verifiedme--small.png')} width='135'*/}
+                                                     {/*height='26'/>*/}
+                                                {/*<div className='vme-verify__qrCode'>*/}
+                                                    {/*<h2>Scan QR Code</h2>*/}
+                                                    {/*<div className='vme-verify__inner'>*/}
+                                                        {/*<div className='vme-verify__inner__top'>*/}
+                                                            {/*<p>Open Verified.Me on your smartphone, and snap a picture of*/}
+                                                                {/*this Code to continue.</p>*/}
+                                                        {/*</div>*/}
+                                                        {/*<div className='vme-verify__inner__bottom'>*/}
+                                                            {/*<img*/}
+                                                                {/*className='vme-verify__animation'*/}
+                                                                {/*src={require('../../images/qr-animation.gif')}*/}
+                                                                {/*width='120'*/}
+                                                                {/*height='112'*/}
+                                                            {/*/>*/}
+                                                        {/*</div>*/}
+                                                    {/*</div>*/}
+                                                    {/*<img*/}
+                                                        {/*className='vme-verify__code'*/}
+                                                        {/*src={verifyCode}*/}
+                                                        {/*width='182'*/}
+                                                        {/*height='182'*/}
+                                                        {/*onClick={() => this.verifyIdentity()}/>*/}
+                                                {/*</div>*/}
+                                                {/*<div className='vme-verify__mobile'>*/}
+                                                    {/*<h2>Enter mobile number</h2>*/}
+                                                    {/*<p>Press Send and you will receive a text message on your smartphone to*/}
+                                                        {/*continue.</p>*/}
+                                                    {/*<input*/}
+                                                        {/*className='vme-verify__phone-number'*/}
+                                                        {/*type='tel'*/}
+                                                        {/*name='vme-verify-sms'*/}
+                                                        {/*id='vme-verify-sms'/>*/}
+                                                    {/*<button className='vme-verify__button'>Send</button>*/}
+                                                {/*</div>*/}
+                                            {/*</div>*/}
+                                        {/*</div>*/}
+                                        {/*: null*/}
+                                    {/*}*/}
                                     <div className='signUpPanel__bottom'>
                                         <h1>Account Details</h1>
                                         <section>
@@ -188,11 +191,11 @@ class SignUp extends Component {
                                             </label>
                                         </section>
                                         <Link to='/profile/account'>
-                                        <button
-                                            className='button-task background-green'
-                                            onClick={this.props.authorizeUser}>
-                                            Save Changes
-                                        </button>
+                                            <button
+                                                className='button-task background-green'
+                                                onClick={this.props.authorizeUser}>
+                                                Save Changes
+                                            </button>
                                         </Link>
                                     </div>
                                 </div>
