@@ -1,6 +1,5 @@
 const path = require('path');
 const express = require('express');
-const config = require('./webpack.config.dev');
 const verifiedData = {
     name: "Joe Blogs",
     address: "123 Front St. Toronto",
