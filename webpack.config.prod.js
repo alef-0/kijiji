@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     devtool: 'source-map',
@@ -9,17 +9,11 @@ module.exports = {
     ],
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: '[name]-[hash].js',
+        filename: 'bundle.js',
         publicPath: '/'
     },
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(),
-        new HtmlWebpackPlugin({
-            template: 'index.html',
-            filename: 'index.html',
-            title: 'Simple Redux Boilerplate',
-            inject: 'body'
-        }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
         }),
@@ -27,7 +21,9 @@ module.exports = {
             compressor: {
                 warnings: false
             }
-        })
+        }),
+        new CopyWebpackPlugin([ { from: __dirname + '/index.html', to: __dirname + '/dist/index.html' },
+        ])
     ],
     module: {
         loaders: [
