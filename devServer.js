@@ -10,10 +10,9 @@ const app = express();
 
 const port = process.env.PORT || 3000;
 
-app.use(express.static('dist'));
+app.use(express.static(__dirname + '/public'));
 
 app.get('*', (req, res) => {
-    console.warn(path.join(__dirname, 'index.html'));
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 

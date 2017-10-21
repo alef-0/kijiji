@@ -8,8 +8,9 @@ module.exports = {
         './src/index'
     ],
     output: {
-        path: path.join(__dirname, 'dist'),
-        filename: 'bundle.js'
+        path: path.join(__dirname, '/public'),
+        filename: 'bundle.js',
+        publicPath: '/public/'
     },
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(),
@@ -21,7 +22,7 @@ module.exports = {
                 warnings: false
             }
         }),
-        new CopyWebpackPlugin([ { from: __dirname + '/index.html', to: __dirname + '/dist/index.html' },
+        new CopyWebpackPlugin([ { from: __dirname + '/index.html', to: __dirname + '/public/index.html' },
         ])
     ],
     module: {
