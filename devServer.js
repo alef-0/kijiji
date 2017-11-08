@@ -1,6 +1,5 @@
 var path = require('path');
 var express = require('express');
-var webpack = require('webpack');
 var request = require('request');
 var http = require('http');
 var requestsConfig = require('./requestsConfig');
