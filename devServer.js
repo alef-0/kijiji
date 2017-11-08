@@ -26,7 +26,7 @@ app.use('/licenseRequest', function(req, res, next) {
         body: requestsConfig.licenseRequest.body
     }, function(error, response, body) {
         if (body) {
-            res.status(200).send(body.appLink);
+            res.status(200).send(body.appLink + '&rt=P');
         }
     });
 });
