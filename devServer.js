@@ -32,7 +32,7 @@ app.use('/licenseRequest', function(req, res, next) {
 });
 
 app.post('/response', function(req, res) {
-    io.sockets.emit('action', {type:'MESSAGE', payload: req.body});
+    io.sockets.emit('action', {type:'MESSAGE', payload: req});
 });
 
 
