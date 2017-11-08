@@ -23155,7 +23155,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var socket = (0, _socket2.default)('http://localhost:3001');
+	var socket = (0, _socket2.default)();
 	var socketIoMiddleware = (0, _reduxSocket2.default)(socket, "server/");
 	
 	var finalCreateStore = (0, _redux.compose)((0, _redux.applyMiddleware)(_reduxThunk2.default, socketIoMiddleware))(_redux.createStore);

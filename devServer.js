@@ -7,8 +7,7 @@ var socket_io = require('socket.io');
 
 const verifyLink = 'https://ca-thebank.demo.verified.me/poll?state=80c87542-d0f9-4f56-ad3f-9a495d1a7efc&_=1510137849453';
 const app = express();
-const server = http.createServer();
-server.listen(3001);
+const server = http.createServer(app);
 const io = socket_io.listen(server);
 
 const port = process.env.PORT || 3000;
@@ -45,7 +44,7 @@ app.use('/verify', function(req, res, next) {
     });
 });
 
-app.listen(port, function() {
+server.listen(port, function() {
     console.log('Our app is running on http://localhost:' + port);
 });
 

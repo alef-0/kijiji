@@ -4,7 +4,7 @@ import io from 'socket.io-client';
 import rootReducer from '../reducers';
 import thunk from 'redux-thunk';
 
-let socket = io('http://localhost:3001');
+let socket = io();
 let socketIoMiddleware = createSocketIoMiddleware(socket, "server/");
 
 const finalCreateStore = compose(
