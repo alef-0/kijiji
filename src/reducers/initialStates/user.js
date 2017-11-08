@@ -8,5 +8,6 @@ export default {
     address: '',
     mobileNumber: '',
     verified: false,
-    authorized: false
+    authorized: false,
+    licenseQrCode: null
 };

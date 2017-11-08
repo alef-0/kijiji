@@ -8,11 +8,40 @@ import {
     USER_ADDRESS_UPDATED,
     USER_MOBILE_NUMBER_UPDATED,
     USER_STATUS_VERIFIED,
-    USER_AUTHORIZED
+    USER_AUTHORIZED,
+    USER_LICENSE_QR_CODE_RECEIVED
 } from '../constants/actionTypes';
 import { VerifyCodeActions, ConfirmationPopupActions } from '../actions';
 import axios from 'axios';
 
+const verifiedData = {
+    name: "Joe Blogs",
+    address: "123 Front St. Toronto",
+    mobileNumber: "(647) 123-4567"
+};
+
+let setUserVerificationInterval = null;
+
+const checkIfUserIsVerified = (dispatch) => {
+    axios({
+        method: 'post',
+        url: `/verify`
+    }).then(res => {
+        console.warn(res.data);
+        if (res.data.Result) {
+            clearInterval(setUserVerificationInterval);
+            dispatch({
+                type: USER_STATUS_VERIFIED,
+                payload: verifiedData
+            });
+
+            dispatch(VerifyCodeActions.hideVerifyCode());
+            dispatch(ConfirmationPopupActions.showConfirmationPopup());
+        }
+    }).catch(err => {
+        console.error('Post request was unsuccessful', err);
+    });
+};
 
 export const updateUserName = (name) => {
     return {
@@ -58,23 +87,7 @@ export const updateUserMobileNumber = (mobileNumber) => {
 
 export const verifyUserIdentity = () => {
     return (dispatch, getState) => {
-        const userEmail = getState().user.email;
-
-        axios({
-            method: 'post',
-            data: userEmail,
-            url: `/verify`
-        }).then(res => {
-            dispatch({
-                type: USER_STATUS_VERIFIED,
-                payload: res.data
-            });
-
-            dispatch(VerifyCodeActions.hideVerifyCode());
-            dispatch(ConfirmationPopupActions.showConfirmationPopup());
-        }).catch(err => {
-            console.error('Post request was unsuccessful', err);
-        });
+        setUserVerificationInterval = setInterval(() => checkIfUserIsVerified(dispatch), 1000);
     };
 };
 
@@ -82,4 +95,18 @@ export const authorizeUser = () => {
     return {
         type: USER_AUTHORIZED
     };
+};
+
+export const getUserLicenseQrCode = () => (dispatch) => {
+    axios({
+        method: 'post',
+        url: `/licenseRequest`
+    }).then(res => {
+        dispatch({
+            type: USER_LICENSE_QR_CODE_RECEIVED,
+            payload: res.data
+        })
+    }).catch(err => {
+        console.error('License Request was unsuccessful', err);
+    });
 };

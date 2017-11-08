@@ -1,9 +1,14 @@
 import { createStore, applyMiddleware, compose } from 'redux';
+import createSocketIoMiddleware from 'redux-socket.io';
+import io from 'socket.io-client';
 import rootReducer from '../reducers';
 import createLogger from 'redux-logger';
 import thunk from 'redux-thunk';
 import {hashHistory} from 'react-router';
 import { routerMiddleware, push } from 'react-router-redux';
+
+let socket = io('http://localhost:3001');
+let socketIoMiddleware = createSocketIoMiddleware(socket, "server/");
 
 /**
  * Entirely optional, this tiny library adds some functionality to
@@ -26,9 +31,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
     }) :
     compose;
 
-const enhancer = composeEnhancers(
-    applyMiddleware(thunk, logger, router)
-);
+const enhancer = composeEnhancers(applyMiddleware(thunk, logger, router, socketIoMiddleware));
 
 export default function configureStore(initialState) {
     const store = createStore(rootReducer, initialState, enhancer);

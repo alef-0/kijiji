@@ -16,6 +16,9 @@ const confirmationPopup = (state = confirmationPopupInitialState, action) => {
         case CONFIRMATION_POPUP_HIDDEN: {
             return confirmationPopupInitialState;
         }
+        case 'MESSAGE': {
+            console.warn(action.payload);
+        }
         default:
             return state;
     }

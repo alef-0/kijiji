@@ -13,7 +13,8 @@ const mapStateToProps = (state) => {
         address: state.user.address,
         mobileNumber: state.user.mobileNumber,
         verified: state.user.verified,
-        verifyCodeOpened: state.verifyCode.verifyCodeOpened
+        verifyCodeOpened: state.verifyCode.verifyCodeOpened,
+        licenseQrCode: state.user.licenseQrCode
     };
 };
 
@@ -39,6 +40,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         verifyUserIdentity() {
             dispatch(UserActions.verifyUserIdentity());
+        },
+        getUserLicenseQrCode() {
+            dispatch(UserActions.getUserLicenseQrCode());
         }
     };
 };

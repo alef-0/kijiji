@@ -21,7 +21,7 @@ const ItemInfoSidebar = (props) => (
                                 props.verified
                                     ? <div className='profileItemContainer vme-verified-status' >
                                         <span className='vme-verified-status__icon'></span>
-                                        <span className='profileItem vme-verified-status__text'><strong>Verified</strong></span>
+                                        <span className='profileItem vme-verified-status__text'><strong>Verified.me</strong></span>
                                     </div>
                                     : null
                             }

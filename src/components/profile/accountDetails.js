@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
-import { verifyCode } from '../../images/verify-img';
+import QRCode from 'qrcode-react';
 
 class AccountDetails extends Component {
     constructor(props) {
@@ -49,6 +49,10 @@ class AccountDetails extends Component {
         if (event.target) {
             this.props.setUserMobileNumber(event.target.value);
         }
+    }
+
+    componentDidMount() {
+        this.props.getUserLicenseQrCode();
     }
 
     verifyIdentity() {
@@ -163,13 +167,12 @@ class AccountDetails extends Component {
                                                         continue.</p>
                                                     <div className="vme-account-details__images">
                                                         <img className="vme-account-details__animation" src={require('../../images/qr-animation.gif')}/>
-                                                        <img
+                                                        <QRCode
                                                             id="qrCode"
                                                             className="vme-account-details__code clickable"
-                                                            src={verifyCode}
-                                                            onClick={() => this.verifyIdentity()}
-                                                            width="182"
-                                                            height="182"/>
+                                                            value={this.props.licenseQrCode}
+                                                            size={182}
+                                                        />
                                                     </div>
                                                 </div>
                                                 <div className="vme-account-details__item">

@@ -19,7 +19,7 @@ class AlertPopup extends Component {
             <div className="vme-alert vme-alert--warning">
                 {this.props.verifyCodeOpened
                     ? <div className="vme-alert__content">
-                        <p>By verifying your profile you’ll confirm your first name, last name and address to Kijiji. We’ll show your first name and the initial from your last name on your profile. We won’t receive your banking details or account numbers.</p>
+                        <p>By verifying your profile you’ll confirm your first name, last name and address to Kijiji. We’ll show your first name and the initial from your last name on your profile.</p>
                     </div>
                     : <div className="vme-alert__content">
                         <p>Help increase the trust and safety of Kijiji by verifying your profile using <strong>Verified.Me</strong>. It only takes a few seconds to complete - <a id="tryVerify" href="#" onClick={this.showVerifyCode}>get started now</a>.</p>

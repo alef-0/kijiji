@@ -6,7 +6,8 @@ import {
     USER_ADDRESS_UPDATED,
     USER_MOBILE_NUMBER_UPDATED,
     USER_STATUS_VERIFIED,
-    USER_AUTHORIZED
+    USER_AUTHORIZED,
+    USER_LICENSE_QR_CODE_RECEIVED
 } from '../constants/actionTypes';
 import { UserInitialState } from './initialStates';
 
@@ -52,6 +53,11 @@ const user = (state = UserInitialState, action) => {
             return {
                 ...state,
                 authorized: true
+            };
+        case USER_LICENSE_QR_CODE_RECEIVED:
+            return {
+                ...state,
+                licenseQrCode: action.payload
             }
         default:
             return state;
