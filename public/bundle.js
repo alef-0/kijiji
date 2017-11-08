@@ -22893,7 +22893,7 @@
 	            {
 	                return _confirmationPopup2.default;
 	            }
-	        case 'MESSAGE':
+	        case 'LICENSE_KEY_RECEIVED':
 	            {
 	                console.warn(action.payload);
 	            }

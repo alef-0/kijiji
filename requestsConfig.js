@@ -33,5 +33,8 @@ module.exports = {
             "licenseNotificationUrl":"https://sleepy-badlands-26278.herokuapp.com/response",
             "state":"opaque state data"
         }
+    },
+    useLicense: {
+        "url": 'https://ca-dac-aequilibrium.demo.verified.me/dac/useLicense',
     }
 };

@@ -16,7 +16,7 @@ const confirmationPopup = (state = confirmationPopupInitialState, action) => {
         case CONFIRMATION_POPUP_HIDDEN: {
             return confirmationPopupInitialState;
         }
-        case 'MESSAGE': {
+        case 'LICENSE_KEY_RECEIVED': {
             console.warn(action.payload);
         }
         default:

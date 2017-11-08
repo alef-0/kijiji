@@ -1,11 +1,11 @@
-var path = require('path');
-var express = require('express');
-var request = require('request');
-var http = require('http');
-var requestsConfig = require('./requestsConfig');
-var socket_io = require('socket.io');
+const path = require('path');
+const express = require('express');
+const request = require('request');
+const http = require('http');
+const requestsConfig = require('./requestsConfig');
+const socket_io = require('socket.io');
+const bodyParser = require('body-parser');
 
-const verifyLink = 'https://ca-thebank.demo.verified.me/poll?state=80c87542-d0f9-4f56-ad3f-9a495d1a7efc&_=1510137849453';
 const app = express();
 const server = http.createServer(app);
 const io = socket_io.listen(server);
@@ -31,8 +31,25 @@ app.use('/licenseRequest', function(req, res, next) {
     });
 });
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
 app.post('/response', function(req, res) {
-    io.sockets.emit('action', {type:'MESSAGE', payload: req});
+    io.sockets.emit('action', {type:'LICENSE_KEY_RECEIVED', payload: req.body});
+
+    request({
+        url: requestsConfig.useLicense.url,
+        method: "POST",
+        json: true,
+        body: {
+            "license": req.body.license,
+            "includeServiceResponses":true
+        }
+    }, function(error, response, body) {
+        io.sockets.emit('action', {type:'LICENSE_KEY_RECEIVED', payload: response.body});
+    });
 });
 
 
